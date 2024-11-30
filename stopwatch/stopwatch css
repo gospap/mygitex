@@ -1,0 +1,44 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+body{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(46, 43, 43);
+}
+.time{
+    text-align: center;
+    height: 50px;
+    margin-top: 50px;
+    width: 100px;
+    position: relative;
+    left: 45%;
+    font-size: 28px;
+}
+.btn{
+    background-color: pink;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border: 0px;
+}
+.btn:hover{
+    cursor: pointer;
+    border-bottom: 1px solid black;
+    transform: scale(1.1);
+}
+.allover{
+    border: 1px solid black;
+    margin-top:200px ;
+    width: 50%;
+    background-color: turquoise;
+    height: 200px;
+    border-radius: 100px;
+    
+}
+.date{
+    color: white;
+}
