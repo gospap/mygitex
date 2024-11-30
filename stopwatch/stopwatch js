@@ -1,0 +1,45 @@
+const display = document.querySelector('.time');
+const startbutton = document.getElementById("start");
+const stopbutton = document.getElementById("stop");
+const resetbutton = document.getElementById("reset");
+
+let timer;
+let seconds =0;
+let work =false;
+
+function format(seconds){
+    const hrs = Math.floor(seconds/3600).toString().padStart(2,"0");
+    const mins = Math.floor((seconds%3600)/60).toString().padStart(2,"0");
+    const secs = Math.floor(seconds%60).toString().padStart(2,"0");
+    return `${hrs}:${mins}:${secs}`;
+}
+
+function update(){
+    display.textContent = format(seconds);
+}
+
+function start(){
+   if(!work){
+        work=true;
+        timer=setInterval(()=>{
+            seconds++;
+            update();
+        },1000);
+   }
+}
+
+function stop(){
+    work=false;
+    clearInterval(timer);
+}
+
+function reset(){
+    stop();
+    seconds=0;
+    update();
+}
+
+startbutton.addEventListener("click",start);
+stopbutton.addEventListener("click",stop);
+resetbutton.addEventListener("click",reset);
+
