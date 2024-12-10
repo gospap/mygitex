@@ -3,7 +3,7 @@ const searchButton = document.getElementById('search-button');
 const weatherOutput = document.getElementById('weather-output');
 
 
-const apiKey = 'adc07217bd715d3b85e3c810f4513798';
+const apiKey = 'HERE YOU WILL ENTER YOUR API KEY';
 searchButton.addEventListener('click', fetchWeather);
 //fetch τα δεδομενα
 function fetchWeather() {
