@@ -15,8 +15,9 @@ for (let i = 0; i < 5; i++) {
 document.body.appendChild(table);
 
 function showresults() {
-  document.getElementById("result").innerHTML =
-    right / (wrong + right) - wrong / (wrong + right);
+  var res =( right / (wrong + right) - wrong / (wrong + right))*100;
+  document.getElementById("result").innerHTML =res;
+   
 }
 
 var intervId;
@@ -48,14 +49,15 @@ var right = 0;
 var wrong = 0;
 table.addEventListener("click", clickHandler);
 function clickHandler(event) {
+  const divider = document.getElementById("num").innerHTML;
   const clickedElement = event.target;
   if (clickedElement.tagName === "TD") {
     const myvalue = parseInt(clickedElement.textContent);
-    if (myvalue % 2 === 1) {
-      clickedElement.style.color = "red";
+    if ((myvalue % divider)!=0) {
+      clickedElement.style.backgroundColor = "red";
       wrong = wrong + 1;
-    } else if (myvalue % 2 === 0) {
-      clickedElement.style.color = "green";
+    } else if ((myvalue % divider) === 0) {
+      clickedElement.style.backgroundColor = "green";
       right = right + 1;
     }
   }
